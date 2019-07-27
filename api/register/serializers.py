@@ -7,8 +7,7 @@ class RegisterSerializer(ModelSerializer):
         fields = (
             'firstname',
             'lastname' ,
-            'contact_email',
-            'contact_number' ,
+            'contact_info',
             'title' ,
             'description' ,
             'photo'
