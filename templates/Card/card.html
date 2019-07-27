@@ -1,3 +1,4 @@
+<% load static %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,7 @@
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}">
 </head>
 
 <body class="app sidebar-mini rtl">
@@ -44,7 +45,7 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="{% static 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg' %}" alt="User Image">
             <div>
                 <p class="app-sidebar__user-name">John Doe</p>
                 <p class="app-sidebar__user-designation">Frontend Developer</p>
@@ -496,18 +497,18 @@
         </div>
     </main>
     <!-- Essential javascripts for application to work-->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="% static 'js/main.js' %}"></script>
     <!-- The javascript plugin to display page loading on top-->
-    <script src="js/plugins/pace.min.js"></script>
+    <script src="% static 'js/plugins/pace.min.js' %}"></script>
     <!-- Page specific javascripts-->
     <!-- Data table plugin-->
-    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
-    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript" src="% static 'js/plugins/jquery.dataTables.min.js' %}"></script>
+    <script type="text/javascript" src="% static 'js/plugins/dataTables.bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="% static 'js/plugins/bootstrap-notify.min.js' %}"></script>
+    <script type="text/javascript" src="% static 'js/plugins/sweetalert.min.js' %}"></script>
     <script type="text/javascript">
     $('#sampleTable').DataTable();
     $('#demoSwal').click(function() {

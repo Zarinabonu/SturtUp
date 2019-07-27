@@ -5,11 +5,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '02_*f8gyvmk+m7xq2+-t3%ywy7jp3(-x^qr3_lw6!d4!rz0*^)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -72,7 +67,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         # local
-        'HOST': 'bjclpvmtk47mytcnh9k6-postgresql.services.clever-cloud.com'
+        'HOST': 'bjclpvmtk47mytcnh9k6-postgresql.services.clever-cloud.com',
         'NAME': 'bjclpvmtk47mytcnh9k6',
         'USER': 'upyzkatvbfbud5lteetu',
         'PASSWORD': 'ZYrs7RWuwZNNkIVV9U0k',
