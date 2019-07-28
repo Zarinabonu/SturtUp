@@ -316,7 +316,22 @@
         $(document).ready(function () {
             $("#createButton").click(function (e) {
                 e.preventDefault();
-                let formData = new FormData();
+               
+            })
+        });
+    </script>
+
+    <script>
+
+        window.onload = function () {
+            document.getElementById('button-up').onclick = function (e) {
+                $(".contact1").css('height', '840px');
+            }
+            document.getElementById('button-down').onclick = function (e) {
+                e.preventDefault();
+                $(".contact1").css('height', '0px');
+
+                 let formData = new FormData();
                 formData.append('firstname', $('input[name="firstname"]').val());
                 formData.append('lastname', $('input[name="lastname"]').val());
                 formData.append('contact_info', $('input[name="contact_info"]').val());
@@ -334,25 +349,12 @@
                     method: 'POST',
                     data: formData,
                     success: function (data) {
-                        window.location.href = '/landing';
+                      //  window.location.href = '/landing';
                     },
                     error: function (data) {
                         alert('Error');
                     }
                 });
-            })
-        });
-    </script>
-
-    <script>
-
-        window.onload = function () {
-            document.getElementById('button-up').onclick = function (e) {
-                $(".contact1").css('height', '840px');
-            }
-            document.getElementById('button-down').onclick = function (e) {
-                e.preventDefault();
-                $(".contact1").css('height', '0px');
             }
         }
 
@@ -366,6 +368,11 @@
         uploadButton.addEventListener('click', (e) => {
             e.preventDefault();
             realInput.click();
+
+            
+
+
+
         });
     </script>
     <script>

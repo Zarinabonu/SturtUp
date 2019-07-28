@@ -121,14 +121,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # 465
-EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "zarinabonu199924@mail.ru"
+EMAIL_HOST_PASSWORD = "passwd"
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'zarinabonu7779@gmail.com'
-EMAIL_HOST_PASSWORD = '7775944z'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
 
 

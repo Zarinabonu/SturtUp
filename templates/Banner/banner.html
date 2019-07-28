@@ -75,8 +75,58 @@
             </ul>
         </div>
         <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-12">
+
                 <div class="tile">
+                                                            <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#myModal1">Add</button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal1" role="dialog">
+                                            <div class="modal-dialog">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Register</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-md-12">
+                                                            <div class="tile">
+                                                                <div class="tile-body">
+                                                                    <form class="form-horizontal">
+                                                                        <div class="form-group row">
+                                                                            <label class="control-label col-md-3">Title</label>
+                                                                            <div class="col-md-8">
+                                                                                <input name="title" class="form-control" type="text" placeholder="Enter full name">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="control-label col-md-3">Info</label>
+                                                                            <div class="col-md-8">
+                                                                                <textarea name="info" class="form-control" rows="4" placeholder="Enter your info"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="control-label col-md-3">Identity Proof</label>
+                                                                            <div class="col-md-8">
+                                                                                <input name="image" class="form-control" type="file">
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-md-offset-3">
+                                                                <button datat-url="banner-create-api" class="btn btn-primary" id="demoSwal2" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                     <div class="tile-body">
                         <table class="table table-hover table-bordered" id="sampleTable">
                             <thead>
@@ -87,7 +137,6 @@
                                     <th>info</th>
                                     <th>delete</th>
                                     <th>Update</th>
-                                    <th>Add</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -136,7 +185,7 @@
                                                                         <div class="form-group row">
                                                                             <label class="control-label col-md-3">Identity Proof</label>
                                                                             <div class="col-md-8">
-                                                                                <input name ="image" class="form-control" type="file">
+                                                                                <input name ="image" id="kv-explorer" class="form-control" type="file">
                                                                             </div>
                                                                         </div>
                                                                     </form>
@@ -148,55 +197,6 @@
                                                         <div class="row">
                                                             <div class="col-md-12 col-md-offset-3">
                                                                 <button  data-url ="banner-update-api" class="btn btn-primary" id="demoSwal2" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Add</button>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModal1" role="dialog">
-                                            <div class="modal-dialog">
-                                                <!-- Modal content-->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title">Register</h4>
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-md-12">
-                                                            <div class="tile">
-                                                                <div class="tile-body">
-                                                                    <form class="form-horizontal">
-                                                                        <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Title</label>
-                                                                            <div class="col-md-8">
-                                                                                <input name="title" class="form-control" type="text" placeholder="Enter full name">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Info</label>
-                                                                            <div class="col-md-8">
-                                                                                <textarea name="info" class="form-control" rows="4" placeholder="Enter your info"></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Identity Proof</label>
-                                                                            <div class="col-md-8">
-                                                                                <input name="image" class="form-control" type="file">
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <div class="row">
-                                                            <div class="col-md-12 col-md-offset-3">
-                                                                <button datat-url="banner-create-api" class="btn btn-primary" id="demoSwal2" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -217,6 +217,7 @@
         </div>
     </main>
     <!-- Essential javascripts for application to work-->
+    <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -266,23 +267,17 @@
             }
         });
     });
-    $('#demoSwal2').click(function() {
-        swal({
-            title: "Are you sure?",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes!",
-            cancelButtonText: "No, cancel plz!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        }, function(isConfirm) {
-            if (isConfirm) {
-                swal("Added!", "Your imaginary file has been Added.", "success");
-            } else {
-                swal("Cancelled", "Your imaginary file is safe :)", "error");
-            }
-        });
-    });
+    // $('#demoSwal2').click(function() {
+    //     swal({
+    //         title: "Are you sure?",
+    //         type: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonText: "Yes!",
+    //         cancelButtonText: "No, cancel plz!",
+    //         closeOnConfirm: false,
+    //         closeOnCancel: false
+    //     }
+    // });
     </script>
     <!-- Google analytics script-->
     <script type="text/javascript">
@@ -301,6 +296,63 @@
         ga('create', 'UA-72504830-1', 'auto');
         ga('send', 'pageview');
     }
+    </script>
+
+    <!-- photo uplaod -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#kv-explorer").fileinput({
+                'theme': 'explorer-fas',
+                language: 'ru',
+                fileType: "any",
+                showUpload: false,
+                showCaption: true,
+                overwriteInitial: false,
+                initialPreviewAsData: true,
+                initialPreview: [
+                    /*"http://lorempixel.com/1920/1080/nature/1",
+                    "http://lorempixel.com/1920/1080/nature/2",
+                    "http://lorempixel.com/1920/1080/nature/3"*/
+                ],
+                initialPreviewConfig: [
+                    /*{caption: "nature-1.jpg", size: 329892, width: "120px", url: "{$url}", key: 1},
+                    {caption: "nature-2.jpg", size: 872378, width: "120px", url: "{$url}", key: 2},
+                    {caption: "nature-3.jpg", size: 632762, width: "120px", url: "{$url}", key: 3}*/
+                ]
+            });
+        });
+    </script>
+
+    <!-- to Ajax -->
+    <script type="text/javascript">
+         $(document).ready(function () {
+            $("#demoSwal2").click(function (e) {
+                e.preventDefault();
+                let formData = new FormData();
+                formData.append('name_ru', $('input[name="title_ru"]').val());
+                formData.append('name_en', $('input[name="title_en"]').val());
+                formData.append('name_uz', $('input[name="title_uz"]').val());
+                formData.append('status', $('select[name="status"]').val());
+                for (let i = 0; i < $('#kv-explorer')[0].files.length; i++){
+                    formData.append('file', $('#kv-explorer')[0].files[i]);
+                }
+                var url = $("#demoSwal2").data("url");
+                $.ajax({
+                    headers: { "X-CSRFToken": "{{csrf_token}}" },
+                    url: url,
+                    processData: false,
+                    contentType: false,
+                    method: 'POST',
+                    data: formData,
+                    success: function (data) {
+                        // window.location.href = '';
+                    },
+                    error: function (data) {
+                        alert('Error');
+                    }
+                });
+            })
+        });
     </script>
 </body>
 
