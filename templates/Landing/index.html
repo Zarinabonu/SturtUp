@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -17,14 +18,14 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- my stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
 
     <!-- counterUP -->
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
 
     <title>SmartUP</title>
 </head>
@@ -68,7 +69,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="img-wrapper">
-                        <img src="img/smartup.jpg" class="d-block w-100" alt="smartup">
+                        <img src="{% static 'img/smartup.jpg' %}" class="d-block w-100" alt="smartup">
                         <div class="grayer">
                         </div>
                     </div>
@@ -79,7 +80,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="img-wrapper">
-                        <img src="img/business.jpg" class="d-block w-100" alt="smartup">
+                        <img src="{% static 'img/business.jpg' %}" class="d-block w-100" alt="smartup">
                         <div class="grayer">
                         </div>
                     </div>
@@ -90,7 +91,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="img-wrapper">
-                        <img src="img/smartup.jpg" class="d-block w-100" alt="smartup">
+                        <img src="{% static 'img/smartup.jpg' %}" class="d-block w-100" alt="smartup">
                         <div class="grayer">
                         </div>
                     </div>
@@ -128,17 +129,17 @@
                     </span>
 
                     <div class="wrap-input1 validate-input" data-validate="First name is required">
-                        <input class="input1" type="text" name="First_name" placeholder="First name">
+                        <input class="input1" type="text" name="firstname" placeholder="First name">
                         <span class="shadow-input1"></span>
                     </div>
 
                     <div class="wrap-input1 validate-input" data-validate="Last Name is required">
-                        <input class="input1" type="text" name="Last_name" placeholder="Last name">
+                        <input class="input1" type="text" name="lastname" placeholder="Last name">
                         <span class="shadow-input1"></span>
                     </div>
 
                     <div class="wrap-input1 validate-input" data-validate="">
-                        <input class="input1" type="text" name="contact" placeholder="Contact">
+                        <input class="input1" type="text" name="contact_info" placeholder="Contact">
                         <span class="shadow-input1"></span>
                     </div>
 
@@ -153,15 +154,17 @@
                     </div>
 
                     <div class="input-container">
-                        <input type="file" id="real-input">
+                        <input type="file" id="real-input" name ="photo">
                         <button class="browse-btn">
                             Browse Files
                         </button>
                         <span class="file-info">Upload a file</span>
                     </div>
 
+
+
                     <div class="container-contact1-form-btn">
-                        <button class="contact1-form-btn" id="button-down">
+                        <button data-url="{% url 'register-create-api' %}" class="contact1-form-btn" id="button-down">
                             Submit Statup
                         </button>
                     </div>
@@ -254,21 +257,21 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="blank">
-                    <img src="img/osg.png" class="img-fluid" alt="">
+                    <img src="{% static 'img/osg.png' %}" class="img-fluid" alt="">
                     <p>Компания ООО «Online Service Group» работает на рынке с 2013 года. Основной нашей деятельностью
                         является разработка, создание и продвижение проектов любого уровня сложности.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="blank">
-                    <img src="img/osg.png" class="img-fluid" alt="">
+                    <img src="{% static 'img/osg.png' %}" class="img-fluid" alt="">
                     <p>Компания ООО «Online Service Group» работает на рынке с 2013 года. Основной нашей деятельностью
                         является разработка, создание и продвижение проектов любого уровня сложности.</p>
                 </div>
             </div class="blank">
             <div class="col-md-4">
                 <div class="blank">
-                    <img src="img/osg.png" class="img-fluid" alt="">
+                    <img src="{% static 'img/osg.png' %}" class="img-fluid" alt="">
                     <p>Компания ООО «Online Service Group» работает на рынке с 2013 года. Основной нашей деятельностью
                         является разработка, создание и продвижение проектов любого уровня сложности.</p>
                 </div>
@@ -303,7 +306,8 @@
         const fileInfo = document.querySelector('.file-info');
         const realInput = document.getElementById('real-input');
 
-        uploadButton.addEventListener('click', () => {
+        uploadButton.addEventListener('click', (e) => {
+            e.preventDefault();
             realInput.click();
         });
     </script>

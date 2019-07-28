@@ -15,5 +15,8 @@ class BannerCreteView(TemplateView):
 class BannerUpdateView(DetailView):
     template_name = 'Banner/banner.html' 
     model = StartUpBanner
-    context_object_name = 'banner'       
+    context_object_name = 'banner'   
+
+def index(request):
+    return render(request,'Landing/index.html')        
 
