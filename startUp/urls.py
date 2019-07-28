@@ -8,6 +8,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('api.urls')),
     path('card/',include('card_startup.urls')),
+    path('banner/',include('banner_startup.urls')),
+    path('register/',include('register_startup.urls')),
     # path('card/',include(card_startup.urls)),
 ]
 
