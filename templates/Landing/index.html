@@ -154,7 +154,7 @@
                     </div>
 
                     <div class="input-container">
-                        <input type="file" id="real-input" name ="photo">
+                        <input type="file" id="real-input" name="photo">
                         <button class="browse-btn">
                             Browse Files
                         </button>
@@ -286,6 +286,63 @@
 
 
 
+    <!-- file uplaod -->
+    <script>
+        $(document).ready(function () {
+            $("#real-input").fileinput({
+                'theme': 'explorer-fas',
+                language: 'ru',
+                fileType: "any",
+                showUpload: false,
+                showCaption: true,
+                overwriteInitial: false,
+                initialPreviewAsData: true,
+                initialPreview: [
+                    /*"http://lorempixel.com/1920/1080/nature/1",
+                    "http://lorempixel.com/1920/1080/nature/2",
+                    "http://lorempixel.com/1920/1080/nature/3"*/
+                ],
+                initialPreviewConfig: [
+                    /*{caption: "nature-1.jpg", size: 329892, width: "120px", url: "{$url}", key: 1},
+                    {caption: "nature-2.jpg", size: 872378, width: "120px", url: "{$url}", key: 2},
+                    {caption: "nature-3.jpg", size: 632762, width: "120px", url: "{$url}", key: 3}*/
+                ]
+            });
+        });
+    </script>
+
+    <!-- to Ajax -->
+    <script>
+        $(document).ready(function () {
+            $("#createButton").click(function (e) {
+                e.preventDefault();
+                let formData = new FormData();
+                formData.append('firstname', $('input[name="firstname"]').val());
+                formData.append('lastname', $('input[name="lastname"]').val());
+                formData.append('contact_info', $('input[name="contact_info"]').val());
+                formData.append('title', $('select[name="title"]').val());
+                formData.append('description', $('select[name="description"]').val());
+                for (let i = 0; i < $('#real-input')[0].files.length; i++) {
+                    formData.append('photo', $('#real-input')[0].files[i]);
+                }
+                var url = $("#button-down").data("url");
+                $.ajax({
+                    headers: { "X-CSRFToken": "{{csrf_token}}" },
+                    url: url,
+                    processData: false,
+                    contentType: false,
+                    method: 'POST',
+                    data: formData,
+                    success: function (data) {
+                        window.location.href = '/landing';
+                    },
+                    error: function (data) {
+                        alert('Error');
+                    }
+                });
+            })
+        });
+    </script>
 
     <script>
 
