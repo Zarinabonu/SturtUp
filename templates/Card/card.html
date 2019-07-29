@@ -13,7 +13,8 @@
     <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
-    <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <meta property="og:description"
+        content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
     <title>Admin page</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,14 +22,20 @@
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <!-- Font-icon css-->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+
 </head>
 
 <body class="app sidebar-mini rtl">
     <!-- Navbar-->
     <header class="app-header"><a class="app-header__logo" href="index.html">Admin page</a>
-        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+            aria-label="Hide Sidebar"></a>
         <!-- Navbar Right Menu-->
         <ul class="app-nav">
             <li class="app-search">
@@ -36,9 +43,11 @@
                 <button class="app-search__button"><i class="fa fa-search"></i></button>
             </li>
             <!-- User Menu-->
-            <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+            <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown"
+                    aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                    <li><a class="dropdown-item" href="Login_page.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                    <li><a class="dropdown-item" href="Login_page.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -46,18 +55,24 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+                src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
             <div>
                 <p class="app-sidebar__user-name">John Doe</p>
                 <p class="app-sidebar__user-designation">Frontend Developer</p>
             </div>
         </div>
         <ul class="app-menu">
-            <li><a class="app-menu__item" href="../index.html"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Mail box</span></a></li>
-            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <li><a class="app-menu__item" href="../index.html"><i class="app-menu__icon fa fa-edit"></i><span
+                        class="app-menu__label">Mail box</span></a></li>
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+                        class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i
+                        class="treeview-indicator fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="../Banner/banner.html"><i class="icon fa fa-circle-o"></i> Data Tables1</a></li>
-                    <li><a class="treeview-item" href="card.html"><i class="icon fa fa-circle-o"></i> DataTables2</a></li>
+                    <li><a class="treeview-item" href="../Banner/banner.html"><i class="icon fa fa-circle-o"></i> Data
+                            Tables1</a></li>
+                    <li><a class="treeview-item" href="card.html"><i class="icon fa fa-circle-o"></i> DataTables2</a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -78,54 +93,62 @@
             <div class="col-md-12">
                 <div class="tile">
                     <div class="tile-body">
-                          <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#myModal1">Add</button>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModal1" role="dialog">
-                                            <div class="modal-dialog">
-                                                <!-- Modal content-->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title">Register</h4>
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-md-12">
-                                                            <div class="tile">
-                                                                <div class="tile-body">
-                                                                    <form class="form-horizontal">
-                                                                        <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Title</label>
-                                                                            <div class="col-md-8">
-                                                                                <input class="form-control" type="text" placeholder="Enter full name">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Info</label>
-                                                                            <div class="col-md-8">
-                                                                                <textarea class="form-control" rows="4" placeholder="Enter your info"></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Identity Proof</label>
-                                                                            <div class="col-md-8">
-                                                                                <input class="form-control" type="file">
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
+                        <button type="button" class="btn btn-success float-right" data-toggle="modal"
+                            data-target="#myModal1">Add</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal1" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Register</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-12">
+                                            <div class="tile">
+                                                <div class="tile-body">
+                                                    <form class="form-horizontal">
+                                                        <div class="form-group row">
+                                                            <label class="control-label col-md-3">Title</label>
+                                                            <div class="col-md-8">
+                                                                <input class="form-control" type="text" name="title"
+                                                                    placeholder="Enter full name">
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <div class="row">
-                                                            <div class="col-md-12 col-md-offset-3">
-                                                                <button class="btn btn-primary" id="demoSwal2" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <div class="form-group row">
+                                                            <label class="control-label col-md-3">text</label>
+                                                            <div class="col-md-8">
+                                                                <input class="form-control" name="text" type="text"
+                                                                    placeholder="Enter your info">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                        <div class="form-group row">
+                                                            <label class="control-label col-md-3">Identity Proof</label>
+                                                            <div class="col-md-8">
+                                                                <input class="form-control" type="file"
+                                                                    id="kv-explorer">
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-12 col-md-offset-3">
+                                                <button class="btn btn-primary" id="demoSwal2" type="button"
+                                                    data-url="{% url 'card-create-api' %}"><i
+                                                        class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button
+                                                    type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <table class="table table-hover table-bordered" id="sampleTable">
                             <thead>
                                 <tr>
@@ -144,7 +167,8 @@
                                     <td>
                                         <a class="btn btn-danger" id="demoSwal" href="#">Delete</a>
                                     </td>
-                                    <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Edit</button>
+                                    <td><button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#myModal">Edit</button>
                                         <!-- Modal -->
                                         <div class="modal fade" id="myModal" role="dialog">
                                             <div class="modal-dialog">
@@ -152,7 +176,8 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h4 class="modal-title">Register</h4>
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="col-md-12">
@@ -160,15 +185,20 @@
                                                                 <div class="tile-body">
                                                                     <form class="form-horizontal">
                                                                         <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Info</label>
+                                                                            <label
+                                                                                class="control-label col-md-3">Text</label>
                                                                             <div class="col-md-8">
-                                                                                <textarea class="form-control" rows="4" placeholder="Enter your info"></textarea>
+                                                                                <input class="form-control" name="text"
+                                                                                    placeholder="Enter your info"></input>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group row">
-                                                                            <label class="control-label col-md-3">Identity Proof</label>
+                                                                            <label
+                                                                                class="control-label col-md-3">Identity
+                                                                                Proof</label>
                                                                             <div class="col-md-8">
-                                                                                <input class="form-control" type="file">
+                                                                                <input class="form-control" type="file"
+                                                                                    id="kv-explorer">
                                                                             </div>
                                                                         </div>
                                                                     </form>
@@ -179,7 +209,12 @@
                                                     <div class="modal-footer">
                                                         <div class="row">
                                                             <div class="col-md-12 col-md-offset-3">
-                                                                <button class="btn btn-primary" id="demoSwal2" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                <button class="btn btn-primary" id="demoSwal2"
+                                                                    type="button"
+                                                                    data-url="{% url 'card-create-api' %}"><i
+                                                                        class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button
+                                                                    type="button" class="btn btn-default"
+                                                                    data-dismiss="modal">Close</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -195,6 +230,67 @@
             </div>
         </div>
     </main>
+
+
+    <!-- photo uplaod -->
+    <script>
+        $(document).load(function () {
+            $("#kv-explorer").fileinput({
+                'theme': 'explorer-fas',
+                language: 'ru',
+                fileType: "any",
+                showUpload: false,
+                showCaption: true,
+                overwriteInitial: false,
+                initialPreviewAsData: true,
+                initialPreview: [
+                    /*"http://lorempixel.com/1920/1080/nature/1",
+                    "http://lorempixel.com/1920/1080/nature/2",
+                    "http://lorempixel.com/1920/1080/nature/3"*/
+                ],
+                initialPreviewConfig: [
+                    /*{caption: "nature-1.jpg", size: 329892, width: "120px", url: "{$url}", key: 1},
+                    {caption: "nature-2.jpg", size: 872378, width: "120px", url: "{$url}", key: 2},
+                    {caption: "nature-3.jpg", size: 632762, width: "120px", url: "{$url}", key: 3}*/
+                ]
+            });
+        });
+    </script>
+
+
+    <!-- to Ajax -->
+    <script>
+        $(function () {
+            $("#demoSwal2").click(function (e) {
+                e.preventDefault();
+                alert("wtf");
+                let formData = new FormData();
+                formData.append('title', $('input[name="title"]').val());
+                formData.append('text', $('input[name="text"]').val());
+                for (let i = 0; i < $('#kv-explorer')[0].files.length; i++) {
+                    formData.append('image', $('#kv-explorer')[0].files[i]);
+                }
+                var url = $("#demoSwal2").data("url");
+                alert(url);
+                $.ajax({
+                    headers: { "X-CSRFToken": "{{csrf_token}}" },
+                    url: url,
+                    processData: false,
+                    contentType: false,
+                    method: 'POST',
+                    data: formData,
+                    success: function (data) {
+                        // window.location.href = '';
+                    },
+                    error: function (data) {
+                        alert('Error');
+                    }
+                });
+            })
+        });
+    </script>
+
+
     <!-- Essential javascripts for application to work-->
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
@@ -209,43 +305,43 @@
     <script type="text/javascript" src="{% static 'js/plugins/bootstrap-notify.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/plugins/sweetalert.min.js' %}"></script>
     <script type="text/javascript">
-    $('#sampleTable').DataTable();
-    $('#demoSwal').click(function() {
-        swal({
-            title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel plx!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        }, function(isConfirm) {
-            if (isConfirm) {
-                swal("Deleted!", "Your imaginary file has been deleted.", "success");
-            } else {
-                swal("Cancelled", "Your imaginary file is safe :)", "error");
-            }
-        });
-    });
-    </script>
+    // $('#sampleTable').DataTable();
+    // $('#demoSwal').click(function() {
+    //     swal({
+    //         title: "Are you sure?",
+    //         text: "You will not be able to recover this imaginary file!",
+    //         type: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonText: "Yes, delete it!",
+    //         cancelButtonText: "No, cancel plx!",
+    //         closeOnConfirm: false,
+    //         closeOnCancel: false
+    //     }, function(isConfirm) {
+    //         if (isConfirm) {
+    //             swal("Deleted!", "Your imaginary file has been deleted.", "success");
+    //         } else {
+    //             swal("Cancelled", "Your imaginary file is safe :)", "error");
+    //         }
+    //     });
+    // });
+    // </script>
     <!-- Google analytics script-->
     <script type="text/javascript">
-    if (document.location.hostname == 'pratikborsadiya.in') {
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-72504830-1', 'auto');
-        ga('send', 'pageview');
-    }
+        if (document.location.hostname == 'pratikborsadiya.in') {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-72504830-1', 'auto');
+            ga('send', 'pageview');
+        }
     </script>
 </body>
 
