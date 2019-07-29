@@ -180,11 +180,110 @@
                                     </td>
                                     <td>{{StartUpBanner.info}}</td>
                                     <td>
+                                        <a class="btn btn-danger" id="banner-delete" data-url="banner-delete-api">Delete</a>
+                                    </td>
+                                    <td><button type="button" class="btn btn-info update-button" id="" data-toggle="modal"
+                                            data-url="{% url 'banner-update-api' StartUpBanner.id %}"
+                                            data-target="#myModal">Edit</button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+                                                <!-- Modal content-->
+                                                
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                
+                                <div style="display: none">
+<div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Register</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-12">
+                                        <div class="tile">
+                                            <div class="tile-body">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-md-3">Title</label>
+                                                        <div class="col-md-8">
+                                                            <input name="title" class="form-control" type="text"
+                                                                placeholder="Enter full name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-md-3">Info</label>
+                                                        <div class="col-md-8">
+                                                            <input name="info" class="form-control" type="text" rows="4"
+                                                                placeholder="Enter your info">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-md-3">Photo</label>
+                                                        <div class="col-md-8">
+                                                            <input name="image" class="form-control" type="file"
+                                                                id="kv-explorer">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="row">
+                                        <div class="col-md-12 col-md-offset-3">
+                                            <button data-url="{% url 'banner-create-api' %}" class="btn btn-primary"
+                                                id="demoSwal2" type="button"><i
+                                                    class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<button
+                                                type="button" class="btn btn-default"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-body">
+                        <table class="table table-hover table-bordered" id="sampleTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>File</th>
+                                    <th>info</th>
+                                    <th>delete</th>
+                                    <th>Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for StartUpBanner in banners %}
+                                <tr>
+                                    <td>{{StartUpBanner.id}}</td>
+                                    <td>{{StartUpBanner.title}}</td>
+                                    <td>
+                                        {% if StartUpBanner.image %}
+                                        <a href="#" class="a-block d-flex align-items-center height-lg"
+                                            style="background-image: {{StartUpBanner.image.url}};">
+                                            {% else %}
+                                            <a href="#" class="a-block d-flex align-items-center height-lg"
+                                                style="background-image: url(images/img_10.jpg);">
+                                                {% endif %}
+                                    </td>
+                                    <td>{{StartUpBanner.info}}</td>
+                                    <td>
                                         <a class="btn btn-danger" id="demoSwal" data-url="banner-delete-api">Delete</a>
                                     </td>
                                     <td><button type="button" class="btn btn-info" id="banner-update"
                                             data-toggle="modal" data-url="{% url 'banner-update-api' StartUpBanner.id %}"
                                             data-target="#myModal">Edit</button>
+                                        {% endfor %}
                                         <!-- Modal -->
                                         <div class="modal fade" id="myModal" role="dialog">
                                             <div class="modal-dialog">
@@ -245,13 +344,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-
-                                
+                                            </div>                                    
+                                </div>
 
                             </tbody>
                         </table>
@@ -296,7 +390,7 @@
         $(function () {
             $("#demoSwal2").click(function (e) {
                 e.preventDefault();
-                alert("wtf");
+                // alert("wtf");
                 let formData = new FormData();
                 formData.append('title', $('input[name="title"]').val());
                 formData.append('info', $('input[name="info"]').val());
@@ -304,7 +398,7 @@
                     formData.append('image', $('#kv-explorer')[0].files[i]);
                 }
                 var url = $("#demoSwal2").data("url");
-                alert(url);
+                // alert(url);
                 $.ajax({
                     headers: { "X-CSRFToken": "{{csrf_token}}" },
                     url: url,
@@ -327,34 +421,16 @@
 
     <script>
         $(function () {
-            $("#banner-update").click(function (e) {
+            $("button.upd").click(function (e) {
                 e.preventDefault();
-                alert("wtf");
-                let formData = new FormData();
-                formData.append('title', $('input[name="title"]').val());
-                formData.append('info', $('input[name="info"]').val());
-                for (let i = 0; i < $('#kv-explorer')[0].files.length; i++) {
-                    formData.append('image', $('#kv-explorer')[0].files[i]);
-                }
-                var url = $("#banner-update").data("url");
-                alert(url);
-                $.ajax({
-                    headers: { "X-CSRFToken": "{{csrf_token}}" },
-                    url: url,
-                    processData: false,
-                    contentType: false,
-                    method: 'PUT',
-                    data: formData,
-                    success: function (data) {
-                        // window.location.href = '';
-                    },
-                    error: function (data) {
-                        alert('Error');
-                    }
-                });
-            })
+                alert($(this).data("url"));
         });
     </script>
+
+banner-delete
+ <!-- delete to Ajax -->
+
+
 
     <!-- <script src="{% static 'js/jquery.js' %}"></script> -->
     <script src="{% static 'js/popper.min.js' %}"></script>
