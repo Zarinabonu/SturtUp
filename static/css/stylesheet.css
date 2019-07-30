@@ -16,7 +16,7 @@ body {
     max-height: 800px;
 }
 
-.img-wrapper img {}
+
 
 .grayer {
     top: 0;
@@ -30,7 +30,7 @@ body {
 /* nanvbar */
 
 .bg-custom {
-    background-color: #2a313c;
+    background-color: #2a313b;
     padding: 0;
 }
 
